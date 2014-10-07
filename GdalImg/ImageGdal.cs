@@ -1007,6 +1007,7 @@ namespace MngImg
             }
 
             int idOrder = 0;
+
             for (int id = 0; id < _ds.RasterCount; id++)
             {
                 Band bdOut = dsOut.GetRasterBand(id + 1);

@@ -1,34 +1,4 @@
-﻿/******************************************************************************
- * $Id: GdalToTiles.Designer.cs 00002 2008-04-17  luiz $
- *
- * Name:     GdalToTiles.Designer.cs
- * Project:  Manager Image from GDAL
- * Purpose:  GUI for make tiles (Designer for project Visula studio).
- * Author:   Luiz Motta, luizmottanet@hotmail.com
- *
- ******************************************************************************
- * Copyright (c) 2008, Luiz Motta
- *
- * Permission is hereby granted, free of charge, to any person obtaining a
- * copy of this software and associated documentation files (the "Software"),
- * to deal in the Software without restriction, including without limitation
- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included
- * in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
- * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
- * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
- * DEALINGS IN THE SOFTWARE.
- *****************************************************************************/
-
-namespace GdalToTiles
+﻿namespace Gdal2Tiles
 {
     partial class GdalToTilesForm
     {
@@ -80,7 +50,6 @@ namespace GdalToTiles
             this.treeViewDescript = new System.Windows.Forms.TreeView();
             this.label6 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.btAbout = new System.Windows.Forms.Button();
             this.grpBxOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxImg)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +67,7 @@ namespace GdalToTiles
             // btnSelectPath
             // 
             this.btnSelectPath.Enabled = false;
-            this.btnSelectPath.Location = new System.Drawing.Point(297, 4);
+            this.btnSelectPath.Location = new System.Drawing.Point(391, 4);
             this.btnSelectPath.Name = "btnSelectPath";
             this.btnSelectPath.Size = new System.Drawing.Size(105, 23);
             this.btnSelectPath.TabIndex = 3;
@@ -310,22 +279,11 @@ namespace GdalToTiles
             this.progressBar1.Size = new System.Drawing.Size(490, 21);
             this.progressBar1.TabIndex = 16;
             // 
-            // btAbout
-            // 
-            this.btAbout.Location = new System.Drawing.Point(421, 4);
-            this.btAbout.Name = "btAbout";
-            this.btAbout.Size = new System.Drawing.Size(75, 23);
-            this.btAbout.TabIndex = 17;
-            this.btAbout.Text = "About";
-            this.btAbout.UseVisualStyleBackColor = true;
-            this.btAbout.Click += new System.EventHandler(this.btAbout_Click);
-            // 
-            // GdalToTiles
+            // GdalToTilesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 438);
-            this.Controls.Add(this.btAbout);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.treeViewDescript);
@@ -336,7 +294,7 @@ namespace GdalToTiles
             this.Controls.Add(this.btnSelectImg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "GdalToTilesWin";
+            this.Name = "GdalToTilesForm";
             this.Text = "GdalToTilesWin";
             this.grpBxOptions.ResumeLayout(false);
             this.grpBxOptions.PerformLayout();
@@ -370,6 +328,7 @@ namespace GdalToTiles
         private System.Windows.Forms.ProgressBar progressBar1;
 
         #endregion
-        private System.Windows.Forms.Button btAbout;
+
     }
 }
+

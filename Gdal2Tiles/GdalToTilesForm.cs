@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using GDAL.Config;
 using MngImg;
 
-namespace GdalToTiles
+namespace Gdal2Tiles
 {
     public partial class GdalToTilesForm : Form
     {
@@ -250,18 +250,6 @@ namespace GdalToTiles
             catch (Exception)
             {
             }
-        }
-
-        private void btAbout_Click(object sender, EventArgs e)
-        {
-            string sMsg =
-                "Purpose: Make tiles for KML (superoverlay format) from one image\r\n" +
-                "This project use GDAL(www.gdal.org) for manager image data\r\n" +
-                "It´s program with GNU license and can be download from http://www.codeplex.com/gdal2tilescsharp\r\n\r\n" +
-                "Luiz Motta\r\n" +
-                "2008-04-15\r\n" +
-                "\r\nVersion 0.9";
-            MessageBox.Show(sMsg, "GdalToTiles", MessageBoxButtons.OK);
         }
     }
 }

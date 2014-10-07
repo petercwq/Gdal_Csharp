@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MngImg", "GdalImg\MngImg.csproj", "{BB14C996-776A-4DC5-8D43-FF18532CABDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GdalToTiles", "GdalToTilesWin\GdalToTiles.csproj", "{D0F96C49-1D1C-49E6-B2D2-9A02CEE3937B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gdal2Tiles", "Gdal2Tiles\Gdal2Tiles.csproj", "{CBBE104D-C371-44FA-BC53-1216EDD22321}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{BB14C996-776A-4DC5-8D43-FF18532CABDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB14C996-776A-4DC5-8D43-FF18532CABDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB14C996-776A-4DC5-8D43-FF18532CABDE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0F96C49-1D1C-49E6-B2D2-9A02CEE3937B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0F96C49-1D1C-49E6-B2D2-9A02CEE3937B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0F96C49-1D1C-49E6-B2D2-9A02CEE3937B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0F96C49-1D1C-49E6-B2D2-9A02CEE3937B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBBE104D-C371-44FA-BC53-1216EDD22321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBBE104D-C371-44FA-BC53-1216EDD22321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBBE104D-C371-44FA-BC53-1216EDD22321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBBE104D-C371-44FA-BC53-1216EDD22321}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
