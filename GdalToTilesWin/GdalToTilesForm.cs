@@ -50,8 +50,7 @@ namespace GdalToTiles
             InitializeComponent();
             _Img = null;
 
-            EnvironmentalGdal.MakeEnvironment(Application.StartupPath);
-            // Application.StartupPath;
+            GdalConfiguration.ConfigureAll();
 
             SetItemCmbSD();
             SetItemCmbSizeTile();

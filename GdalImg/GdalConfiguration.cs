@@ -115,6 +115,12 @@ namespace GdalToTiles
             PrintDriversGdal();
         }
 
+        public static void ConfigureAll()
+        {
+            ConfigureGdal();
+            ConfigureOgr();
+        }
+
         private static void PrintDriversOgr()
         {
 #if DEBUG
