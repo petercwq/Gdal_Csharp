@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MngImg", "GdalImg\MngImg.csproj", "{BB14C996-776A-4DC5-8D43-FF18532CABDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GdalToTilesWin", "GdalToTilesWin\GdalToTilesWin.csproj", "{D0F96C49-1D1C-49E6-B2D2-9A02CEE3937B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GdalToTiles", "GdalToTilesWin\GdalToTiles.csproj", "{D0F96C49-1D1C-49E6-B2D2-9A02CEE3937B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

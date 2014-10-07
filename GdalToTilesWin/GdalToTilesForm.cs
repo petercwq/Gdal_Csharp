@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * $Id: GdalToTilesWin.cs 00002 2008-04-17  luiz $
+ * $Id: GdalToTiles.cs 00002 2008-04-17  luiz $
  *
- * Name:     GdalToTilesWin.cs
+ * Name:     GdalToTiles.cs
  * Project:  Manager Image from GDAL
  * Purpose:  GUI for make tiles.
  * Author:   Luiz Motta, luizmottanet@hotmail.com
@@ -39,13 +39,13 @@ using System.Windows.Forms;
 
 using MngImg;
 
-namespace GdalToTilesWin
+namespace GdalToTiles
 {
-    public partial class GdalToTilesWin : Form
+    public partial class GdalToTilesForm : Form
     {
         private ImageGdal _Img;
 
-        public GdalToTilesWin()
+        public GdalToTilesForm()
         {
             InitializeComponent();
             _Img = null;

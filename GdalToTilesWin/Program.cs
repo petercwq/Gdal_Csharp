@@ -31,7 +31,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace GdalToTilesWin
+namespace GdalToTiles
 {
     internal static class Program
     {
@@ -43,7 +43,7 @@ namespace GdalToTilesWin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GdalToTilesWin());
+            Application.Run(new GdalToTilesForm());
         }
     }
 }

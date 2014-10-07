@@ -1,7 +1,7 @@
 ﻿/******************************************************************************
- * $Id: GdalToTilesWin.Designer.cs 00002 2008-04-17  luiz $
+ * $Id: GdalToTiles.Designer.cs 00002 2008-04-17  luiz $
  *
- * Name:     GdalToTilesWin.Designer.cs
+ * Name:     GdalToTiles.Designer.cs
  * Project:  Manager Image from GDAL
  * Purpose:  GUI for make tiles (Designer for project Visula studio).
  * Author:   Luiz Motta, luizmottanet@hotmail.com
@@ -28,9 +28,9 @@
  * DEALINGS IN THE SOFTWARE.
  *****************************************************************************/
 
-namespace GdalToTilesWin
+namespace GdalToTiles
 {
-    partial class GdalToTilesWin
+    partial class GdalToTilesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -320,7 +320,7 @@ namespace GdalToTilesWin
             this.btAbout.UseVisualStyleBackColor = true;
             this.btAbout.Click += new System.EventHandler(this.btAbout_Click);
             // 
-            // GdalToTilesWin
+            // GdalToTiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
