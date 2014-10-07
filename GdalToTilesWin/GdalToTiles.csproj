@@ -71,12 +71,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GdalImg\MngImg.csproj">
-      <Project>{BB14C996-776A-4DC5-8D43-FF18532CABDE}</Project>
-      <Name>MngImg</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="gdalconst_csharp">
       <HintPath>..\packages\GDAL.1.9.2\lib\net40\gdalconst_csharp.dll</HintPath>
     </Reference>
@@ -130,6 +124,12 @@
       <ProductName>.NET Framework 3.5</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GdalImg\MngImg.csproj">
+      <Project>{bb14c996-776a-4dc5-8d43-ff18532cabde}</Project>
+      <Name>MngImg</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
