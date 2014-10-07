@@ -2,12 +2,14 @@
 using System.Windows.Forms;
 using GDAL.Config;
 using MngImg;
+using GeoAPI.Geometries;
+using System.Drawing;
 
 namespace Gdal2Tiles
 {
     public partial class GdalToTilesForm : Form
     {
-        private ImageGdal _Img;
+        private GdalImage _Img;
 
         public GdalToTilesForm()
         {
@@ -25,33 +27,32 @@ namespace Gdal2Tiles
             treeViewDescript.Nodes.Clear();
 
             //Array -> north[0], south[1], west[2], east[3];
-            double[] box = new double[4];
+            var box = _Img.Extent;
 
             int idNode = 0;
             treeViewDescript.Nodes.Add("Source");
-            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("Path {0}", _Img.Path));
+            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("Path {0}", System.IO.Path.GetDirectoryName(_Img.FullName)));
             treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("Name {0}", _Img.FileName));
             treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("Format {0}", _Img.Format));
 
             idNode++;
             treeViewDescript.Nodes.Add("Raster");
-            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("Size X/Y {0}/{1}", _Img.XSize, _Img.YSize));
+            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("Size X/Y {0}/{1}", _Img.Width, _Img.Height));
             treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("ResolutionX/Y {0:0.0000}/{1:0.0000}", _Img.XResolution, _Img.YResolution));
-            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("Number Bands {0}", _Img.NumberBand));
+            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("Number Bands {0}", _Img.BandsNumber));
             treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("Type {0}", _Img.Type));
 
             idNode++;
-            _Img.WriteBox(ref box);
             treeViewDescript.Nodes.Add("Extent");
-            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("North {0:0.0000}", box[0]));
-            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("West {0:0.0000}", box[2]));
-            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("South {0:0.0000}", box[1]));
-            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("East {0:0.0000}", box[3]));
+            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("North {0:0.0000}", box.Top()));
+            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("West {0:0.0000}", box.Left()));
+            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("South {0:0.0000}", box.Bottom()));
+            treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("East {0:0.0000}", box.Right()));
 
             idNode++;
             treeViewDescript.Nodes.Add("Spatial Reference");
             treeViewDescript.Nodes[idNode].Nodes.Add(string.Format("{0} Geodesic WGS84(EPSG:4326)", _Img.IsSameCS("EPSG:4326") ? "It is" : "It is not"));
-            treeViewDescript.Nodes[idNode].Nodes.Add(_Img.SpatialReference);
+            treeViewDescript.Nodes[idNode].Nodes.Add(_Img.Projection);
         }
 
         private void SetItemCmbOrder()
@@ -61,7 +62,7 @@ namespace Gdal2Tiles
             cmbBxBand2.Items.Clear();
             cmbBxBand3.Items.Clear();
 
-            int nBand = _Img.NumberBand;
+            int nBand = _Img.BandsNumber;
             for (int i = 0; i < nBand; i++)
             {
                 cmbBxBand1.Items.Add(i + 1);
@@ -177,17 +178,17 @@ namespace Gdal2Tiles
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                if (ImageGdal.IsValidImage(dialog.FileName))
+                if (GdalImage.IsValidImage(dialog.FileName))
                 {
-                    _Img = new ImageGdal(dialog.FileName);
+                    _Img = new GdalImage(dialog.FileName);
 
                     grpBxOptions.Enabled = true;
                     btnSelectPath.Enabled = true;
 
                     FuncStatusText(string.Format("Getting description\r\n{0}...", dialog.FileName));
 
-                    pctBoxImg.Image = _Img.GetBitmap(pctBoxImg.Size, null, 0);
-
+                    // pctBoxImg.Image = _Img.GetBitmap(pctBoxImg.Size, null, 0);
+                    pctBoxImg.Image = _Img.GetNonRotatedPreview(new Size(_Img.Width / 20, _Img.Height / 20), _Img.Extent);
                     ShowDescriptImg();
                     SetItemCmbOrder();
 

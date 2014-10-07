@@ -1,42 +1,40 @@
+using System.Drawing;
+using GeoAPI.Geometries;
 using OSGeo.GDAL;
 
 namespace MngImg
 {
     public interface IImage
     {
-        #region Methods
+        void Warp(string sWellKnownGeogCS);
 
-        void Warp(string sKnowGCS);
+        double[] GetOverviewParams(int idOverview, int xoff, int yoff);
 
-        void WriteBox(ref double[] box);
+        //void GetGeoXY(int xPixel, int yLine, out double geoX, out double geoY);
 
-        double[] GetParamsOverview(int idOverview, int xoff, int yoff);
+        //void GetPixelXY(double geoX, double geoY, out int xPixel, out int yLine);
 
         bool IsSameCS(string sWellKnownGeogCS);
 
-        System.Drawing.Bitmap GetBitmap(System.Drawing.Size size, int[] Order, int SD);
+        Bitmap GetBitmap(Size size, int[] Order, int SD);
 
-        #endregion Methods
-
-        #region Properties
-
-        string Path { get; }
+        string FullName { get; }
 
         string FileName { get; }
 
-        int XSize { get; }
+        int Width { get; }
 
-        int YSize { get; }
+        int Height { get; }
 
         double XResolution { get; }
 
         double YResolution { get; }
 
-        int NumberBand { get; }
+        int BandsNumber { get; }
 
         int NumberOverView { get; }
 
-        string SpatialReference { get; }
+        string Projection { get; }
 
         string Type { get; }
 
@@ -44,27 +42,6 @@ namespace MngImg
 
         string Format { get; }
 
-        #endregion Properties
-    }
-
-    public interface IImageWrite
-    {
-        #region Methods
-
-        void SetOptionOrder(int[] Order);
-
-        void SetOptionSubset(int xoff, int yoff, int xsize, int ysize);
-
-        void SetOptionStretchStardDesv(int nSD);
-
-        void SetOptionNullData(int Value);
-
-        void SetOptionOverview(int NumOverview);
-
-        void SetOptionMakeAlphaBand(byte ValueAlphaBand);
-
-        void WriteFile(string sDrive, string sPathFileName);
-
-        #endregion Methods
+        Envelope Extent { get; }
     }
 }
