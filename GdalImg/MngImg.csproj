@@ -83,6 +83,7 @@
     <Compile Include="GdalConfiguration.cs" />
     <Compile Include="GeoAPIEx.cs" />
     <Compile Include="GeoTransform.cs" />
+    <Compile Include="GlobalMercator.cs" />
     <Compile Include="IImage.cs" />
     <Compile Include="IImageWrite.cs" />
     <Compile Include="GdalImage.cs" />
