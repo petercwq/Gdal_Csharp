@@ -113,8 +113,7 @@ namespace Gdal2Tiles
             int sizeTile = (int)cmBxSize.SelectedItem;
 
             string sPathTiles = MakePathTiles(sSelectedPath);
-            ImageWriteTilesGdal imgWrite = new ImageWriteTilesGdal
-                (_Img.Dataset, sizeTile, sPathTiles, new StatusText(FuncStatusText), new StatusProgressBar(FuncStatusProgressBar));
+            ImageWriteTilesGdal imgWrite = new ImageWriteTilesGdal(_Img.Dataset, sizeTile, sPathTiles, new StatusText(FuncStatusText), new StatusProgressBar(FuncStatusProgressBar));
 
             imgWrite.SetOptionNullData(0);
             imgWrite.SetOptionMakeAlphaBand((byte)0);
@@ -188,7 +187,8 @@ namespace Gdal2Tiles
                     FuncStatusText(string.Format("Getting description\r\n{0}...", dialog.FileName));
 
                     // pctBoxImg.Image = _Img.GetBitmap(pctBoxImg.Size, null, 0);
-                    pctBoxImg.Image = _Img.GetNonRotatedPreview(new Size(_Img.Width / 20, _Img.Height / 20), _Img.Extent);
+                    _Img.Warp("EPSG:4326");
+                    //pctBoxImg.Image = _Img.GetNonRotatedPreview(new Size(_Img.Width / 20, _Img.Height / 20), _Img.Extent);
                     ShowDescriptImg();
                     SetItemCmbOrder();
 
