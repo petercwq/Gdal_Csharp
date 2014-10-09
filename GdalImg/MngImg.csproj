@@ -89,6 +89,7 @@
     <Compile Include="GdalImage.cs" />
     <Compile Include="ImageWriteGdal.cs" />
     <Compile Include="ImageWriteTilesGdal.cs" />
+    <Compile Include="KMLBuilder.cs" />
     <Compile Include="KMLTiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

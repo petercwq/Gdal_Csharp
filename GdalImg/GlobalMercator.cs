@@ -333,5 +333,20 @@ namespace MngImg
             }
             return arr;
         }
+
+        public static bool IsSizeTilePower2(int tileSize)
+        {
+            // ignore 0
+            // return (tileSize & (tileSize - 1)) == 0;
+
+            // consider 0
+            return (tileSize != 0) && ((tileSize & (tileSize - 1)) == 0);
+        }
+
+        public static int GetTotalLevel(int tileSize, int rasterXSize, int rasterYSize)
+        {
+            double xLevel = Math.Log((double)(rasterXSize / tileSize), 2), yLevel = Math.Log((double)(rasterYSize / tileSize), 2);
+            return Math.Max((int)Math.Ceiling(xLevel), (int)Math.Ceiling(yLevel));
+        }
     }
 }
